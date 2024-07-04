@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    color: white;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
@@ -55,11 +56,11 @@
     align-items: center;
     background-color:#30343f;
     padding: 0 20px;
-    height: 600px;
+    height: 100%;
 }
 
 .meme {
-    height: 600px;
+    height: 400px;
     width: 50%;
     background-color: black;
     display: flex;
@@ -74,11 +75,219 @@
     font-weight: 800;
     color: black;
     padding: 8px 50px;
-    height: 150px;
+    height: 200px;
 }
 
 .imagen-meme {
     display: block;
     flex-grow: 1;
     height: 600px;
+}
+
+.descargar {
+    display: block;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 35px;
+    margin: 20px;
+    background-color: rgb(80, 251, 54);
+    padding-inline: 15px;
+}
+
+.panel {
+    width: 260PX;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    background-color: #252935;
+    z-index: 10;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.titulo-imagen {
+    margin-top: 20px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+.url {
+    margin-top: 20px;
+    
+}
+
+.url-imagen {
+    background-color: #393e49;
+    margin-top: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    
+}
+
+.fondo {
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.opcion-fondo {
+    width: calc(50% - 2px);
+    background-color: #393e49;
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 30px;
+
+
+    }
+
+.filtro {
+    margin-top: 30px;
+
+}
+
+.brillo {
+    margin-top: 20px;
+    font-size: 15px;
+
+}
+.rango {
+    margin-top: 10px;
+}
+
+.boton-filtros {
+    background-color: #393e49;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.panel-1 {
+    width: 260PX;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    background-color: #252935;
+    z-index: 10;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.titulo-texto {
+    margin-top: 20px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+.superior {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.contenedor-checkbox {
+    display: flex;
+    align-items: center;
+
+}
+.sin-texto { 
+    margin-top: 10px;
+    text-align: start;
+}
+
+.checkbox {
+    margin-top: 15px;
+}
+
+.titulo-inferior {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.fuente {
+    margin-top: 15px;
+}
+
+.tipo-fuente {
+    background-color: #393e49;
+    margin-top: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.tamaño-fuente {
+    width: calc(50% - 2.5px);
+    background-color: #393e49;
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.justificacion {
+    width: calc(16% - 2.5px);
+    background-color: #393e49;
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 40px;
+    cursor: pointer;
+
+}
+
+.texto-color {
+    margin-top: 20px;
+}
+
+.color {
+    display: flex;
+    background-color: #393e49;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: calc(50% - 2.5px)
+}
+
+.texto-fondo {
+    margin-top: 20px;
+    
+}
+
+.titulo-contorno {
+    margin-top: 20px;
+}
+.contorno {
+    width: calc(33% - 2.5px);
+    background-color: #393e49;
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 40px;
+    cursor: pointer;
+}
+.espaciado {
+    margin-top: 20px;
+}
+
+.interlineado {
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+.espaciado-1 {
+    width: 100%;
+    background-color: #393e49;
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 40px;
+
 }
