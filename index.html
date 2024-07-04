@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <script src="app.js"></script>
+    
     <!-- Barra de Menu -->
     <header class="barra-menu">
         <h1 class="Titulo">Generador de Memes</h1>
@@ -30,19 +30,13 @@
     </header>
     <!-- Contenedor del Meme -->
     <main class="contenedor-meme">
-    <div class="contenedor-principal" id="contenedor-principal">
-        <section class="meme">
-            <p class="texto-meme">TOP TEXT</p>
-        </section>
+        <div class="contenedor-principal" id="contenedor-principal">
+            <p class="texto-meme" id="texto-meme">TOP TEXT</p>
+            <div class="imagen-meme">
+                <img src="https://img.freepik.com/vector-gratis/ilustracion-icono-vector-dibujos-animados-lindo-gato-bostezo-sonoliento-concepto-icono-naturaleza-animal-aislado-vector-premium-estilo-dibujos-animados-plana_138676-3732.jpg" alt=""></div>
+                <p class="texto-meme" id="boton-meme">BOTTOM TEXT</p>
+        </div>
 
-        <section class="imagen-meme">
-            <img src="" alt="">
-        </section>
-
-        <section>
-            <p class="texto-meme">BOTTOM TEXT</p>
-        </section>
-    </div>
         <button class="descargar" id="button-descarga">Descargar Meme</button>
     <!-- Menu Contenedor Imagen -->
         <!-- <aside class="panel">
@@ -77,20 +71,20 @@
             <button class="boton-filtros">Restablecer Filtros</button>
             -->
             <!-- Menu Contenedor Texto -->
-            <aside class="panel-1">
+            <!-- <aside class="panel-1">
                 <h2 class="titulo-texto">TEXTO</h2>
                 <label for="name" class="superior">SUPERIOR <br>
                     <input type="text" class="url-imagen" id="url-imagen">
                 </label>
                 <div class="contenedor-chekbox">
-                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <input type="checkbox" class="checkbox" id="checkbox-1">
                     <label for="sin-texto" class="sin-texto">Sin Texto Superior</label>
                 </div>
                 <label for="titulo" class="superior">INFERIOR <br>
                     <input type="text" class="url-imagen" id="url-imagen">
                 </label>
                 <div class="contenedor-chekbox">
-                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <input type="checkbox" class="checkbox" id="checkbox-2">
                     <label for="sin-texto" class="sin-texto">Sin Texto Superior</label>
                 </div>
                 <label for="titulo" class="fuente">FUENTE 
@@ -124,7 +118,7 @@
                     </Label>
                 </div>
                 <div class="contenedor-chekbox">
-                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <input type="checkbox" onclick="mostrar" class="checkbox" id="checkbox">
                     <label for="sin-texto" class="sin-texto">Fondo Transparante</label>
                 </div>
                 <label for="titulo" class="titulo-contorno">CONTORNO <br>
@@ -140,12 +134,12 @@
                 </label>
     
 
-            </aside>
+            </aside> -->
             
             
     </main>
 
 </div>
-    
+<script src="app.js"></script>
 </body>
 </html>

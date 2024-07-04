@@ -42,51 +42,49 @@
     background-color: transparent;
 }
 
-.contenedor-principal {
-    display: flex;
-    flex-grow: 1;
-
-}
-
 .contenedor-meme {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#30343f;
-    padding: 0 20px;
-    height: 100%;
+    background-color: #30343f;
+    padding: 0, 20px;
 }
 
-.meme {
-    height: 400px;
-    width: 50%;
-    background-color: black;
+.contenedor-principal {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    
 }
 
 .texto-meme {
-    display: block;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     font-size: 35px;
-    background-color: white;
+    padding: 35px 50px;
+    background-color: rgb(251, 248, 248);
     text-align: center;
     font-weight: 800;
     color: black;
-    padding: 8px 50px;
-    height: 200px;
+    padding-top: 50px;
+    
 }
 
 .imagen-meme {
-    display: block;
-    flex-grow: 1;
-    height: 600px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-image:url(https://img.freepik.com/vector-gratis/ilustracion-icono-vector-dibujos-animados-lindo-gato-bostezo-sonoliento-concepto-icono-naturaleza-animal-aislado-vector-premium-estilo-dibujos-animados-plana_138676-3732.jpg)
+    
 }
 
 .descargar {
     display: block;
-    border-radius: 3px;
+    align-items: center;
+    border-radius: 5px;
     cursor: pointer;
     height: 35px;
     margin: 20px;
