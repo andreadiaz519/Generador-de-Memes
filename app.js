@@ -1,26 +1,27 @@
 // Modo claro-oscuro
 
-const darkMode = document.getElementById(`dark-mode`);
-const lightMode = document.getElementById(`light-mode`);
-const body = document.getElementById(`body`);
+const darkMode = document.getElementById("dark-mode-button");
+const lightMode = document.getElementById("light-mode-button");
+const body = document.getElementById("body");
 
-function darkModeOn () {
-    body.classList.add(`dark-mode`);
-    body.classList.remove(`light-mode`);
-    darkMode.classList.add(`hidden`);
-    lightMode.classList.remove(`hidden`);
+function darkMode () {
+    body.classList.add("darkMode");
+    body.classList.remove("ligthMode");
+    darkMode.classList.add("hidden");
+    lightMode.classList.remove("hidden");
 }
 
-darkMode.addEventListener(`clik`, darkModeOn);
+darkMode.addEventListener("clik", darkMode);
 
-function lightModeOn () {
-    body.classList.add(`dark-mode`);
-    body.classList.remove(`light-mode`);
-    darkMode.classList.add(`hidden`);
-    lightMode.classList.remove(`hidden`);
+function lightMode () {
+    body.classList.add("lighMode");
+    body.classList.remove("darkMode");
+    lighMode.classList.remove("hidden");
+    darkModeMode.classList.add("hidden");
 }
 
-lightModeMode.addEventListener(`clik`, lightModeOn);
+lightMode.addEventListener("clik", lightMode);
+
 
 
 
@@ -54,26 +55,24 @@ domtoimage.toBlob(contenedorMeme).then(function (blob) {
 botonDescarga.addEventListener(`click`, decargarMeme);
 
 
-// Aside de Texto
-
-// Fuentes de texto
-// const titulo = document.getElementById(`fuente`);
-// const input = document.getElementById(`tipo-fuente`);
-// const select = document.getElementById(`font`);
-
-// // titulo.innerHTML = `Texto Default`;
-
-// input.addEventListenner(`input`, (e) => {
-// })
-
-// select.addEventListenner(`input`, (e) => {
-//     // console.log(e.target.value)
-//     titulo.style.fontFamily = e.target.value;
-
-// })
-
-
 // Aside de Imagen
+
+const botonImg = document.getElementById("boton-imagen");
+const botonTex = document.getElementById("boton-tex");
+const seccionImg = document.getElementById("panel-img");
+const seccionTex = document.getElementById("panel-texto");
+
+botonImg.addEventListenner("click", function() {
+    seccionImg.style.display = "block";
+    seccionImg.style.display = "none";
+})
+
+// botonTex.addEventListenner("click", function() {
+//     seccionImg.style.display = "block";
+//     seccionTex.style.display = "none";
+// })
+
+
 
 // Color de fondo
 
@@ -92,4 +91,36 @@ botonDescarga.addEventListener(`click`, decargarMeme);
 // button.addEventListenner(`button`, (a) => {
 // titulo.style.alignItems = a.target.value;
 // })
+
+// Url
+
+const url = document.getElementById("panel-texto");
+const urlImagen = document.getElementById(`url-imagen`);
+
+urlImagen.addEventListener("input", () => {
+    url.style.backgroundImage = `url("${url-imagen.value}")`;
+
+})
+
+
+// Aside de Texto
+
+
+
+// Fuentes de texto
+const titulo = document.getElementById(`fuente`);
+const input = document.getElementById(`tipo-fuente`);
+const select = document.getElementById(`font`);
+
+// titulo.innerHTML = `Texto Default`;
+
+input.addEventListenner(`input`, (e) => {
+})
+
+select.addEventListenner(`input`, (e) => {
+    // console.log(e.target.value)
+    titulo.style.fontFamily = e.target.value;
+
+})
+
 
