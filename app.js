@@ -1,49 +1,24 @@
 // Modo claro-oscuro
 
-const darkMode = document.getElementById("dark-mode-button");
-const lightMode = document.getElementById("light-mode-button");
-const body = document.getElementById("body");
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeButton = document.getElementById('dark-mode-button');
+    const lightModeButton = document.getElementById('light-mode-button');
 
-function darkMode () {
-    body.classList.add("darkMode");
-    body.classList.remove("ligthMode");
-    darkMode.classList.add("hidden");
-    lightMode.classList.remove("hidden");
-}
+    darkModeButton.addEventListener('click', function() {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+    });
 
-darkMode.addEventListener("clik", darkMode);
-
-function lightMode () {
-    body.classList.add("lighMode");
-    body.classList.remove("darkMode");
-    lighMode.classList.remove("hidden");
-    darkModeMode.classList.add("hidden");
-}
-
-lightMode.addEventListener("clik", lightMode);
-
-
-
-
-
-
-
-
-// // // boton checkbox
-// const checkbox = document.getElementById("checkbox");
-// checkbox.addEventListener("chage", function() {
-// console.log("Cambio el estado del checkbox");
-// }
-// )
-
-// // function mostrar() {
-// //     document.getElementById(`texto-meme`).style.display = `block`;
-// // }
+    lightModeButton.addEventListener('click', function() {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+    });
+});
 
 
 // Boton Descarga
-const botonDescarga = document.getElementById(`button-descarga`);
-const contenedorMeme = document.getElementById(`contenedor-principal`);
+const botonDescarga = document.getElementById("button-descarga");
+const contenedorMeme = document.getElementById("contenedor-principal");
 
 function decargarMeme () {
 domtoimage.toBlob(contenedorMeme).then(function (blob) {
@@ -51,76 +26,253 @@ domtoimage.toBlob(contenedorMeme).then(function (blob) {
     saveAs(blob, `mi-meme.png`)
 }
 )}
-
-botonDescarga.addEventListener(`click`, decargarMeme);
+botonDescarga.addEventListener("click", decargarMeme);
 
 
 // Aside de Imagen
 
-const botonImg = document.getElementById("boton-imagen");
-const botonTex = document.getElementById("boton-tex");
-const seccionImg = document.getElementById("panel-img");
-const seccionTex = document.getElementById("panel-texto");
-
-botonImg.addEventListenner("click", function() {
-    seccionImg.style.display = "block";
-    seccionImg.style.display = "none";
-})
-
-// botonTex.addEventListenner("click", function() {
-//     seccionImg.style.display = "block";
-//     seccionTex.style.display = "none";
-// })
+    
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const img = document.querySelector('.imagen-meme img');
 
-// Color de fondo
+    function actualizarImagen() {
+        const url = urlInput.value.trim();
+        if (url !== '') {
+            imagenMeme.style.backgroundImage = `url(${url})`;
+        }
+    }
+
+    // Filtros
+
+    const brillo = document.getElementById('brillo');
+    const opacidad = document.getElementById('opacidad');
+    const contraste = document.getElementById('contraste');
+    const desenfoque = document.getElementById('desenfoque');
+    const escalaGrises = document.getElementById('escala-grises');
+    const sepia = document.getElementById('sepia');
+    const hue = document.getElementById('hue');
+    const saturado = document.getElementById('saturado');
+    const negativo = document.getElementById('negativo');
+    const urlInput = document.getElementById('url-imagen');
 
 
+    // Restablecer Filtros
+    const resetFiltrosButton = document.getElementById('reset-filtros');
 
+    function restablecerFiltros() {
+        brilloInput.value = 1;
+        opacidadInput.value = 1;
+        contrasteInput.value = 100;
+        desenfoqueInput.value = 0;
+        escalaGrisesInput.value = 0;
+        sepiaInput.value = 0;
+        hueInput.value = 0;
+        saturadoInput.value = 100;
+        negativoInput.value = 0;
+        
+        imagenMeme.style.filter = 'none';
+    }
 
+    actualizarImagen();
+    function updateFilters() {
+        const filters = `
+            brightness(${brillo.value})
+            opacity(${opacidad.value})
+            contrast(${contraste.value}%)
+            blur(${desenfoque.value}px)
+            grayscale(${escalaGrises.value}%)
+            sepia(${sepia.value}%)
+            hue-rotate(${hue.value}deg)
+            saturate(${saturado.value}%)
+            invert(${negativo.value})
+        `;
+        img.style.filter = filters;
+    }
 
-// Fondo
+    brillo.addEventListener('input', updateFilters);
+    opacidad.addEventListener('input', updateFilters);
+    contraste.addEventListener('input', updateFilters);
+    desenfoque.addEventListener('input', updateFilters);
+    escalaGrises.addEventListener('input', updateFilters);
+    sepia.addEventListener('input', updateFilters);
+    hue.addEventListener('input', updateFilters);
+    saturado.addEventListener('input', updateFilters);
+    negativo.addEventListener('input', updateFilters);
+    resetFiltrosButton.addEventListener('click', restablecerFiltros);
 
-// const titulo = document.getElementById(fondo-de-imagen);
-// const button = document.getElementById(fondo-1);
+    urlInput.addEventListener('input', function() {
+        const url = urlInput.value;
+        img.src = url;
+    });   
+});
 
+    
 
-// titulo.innerHTML = `Texto Default`;
-
-// button.addEventListenner(`button`, (a) => {
-// titulo.style.alignItems = a.target.value;
-// })
-
-// Url
-
-const url = document.getElementById("panel-texto");
-const urlImagen = document.getElementById(`url-imagen`);
-
-urlImagen.addEventListener("input", () => {
-    url.style.backgroundImage = `url("${url-imagen.value}")`;
-
-})
 
 
 // Aside de Texto
 
+// Texto superior e inferior
+
+document.addEventListener('DOMContentLoaded', function() {
+    const superiorTexto = document.getElementById('superior-texto');
+    const textoMemeSuperior = document.getElementById('texto-meme-superior');
+
+    superiorTexto.addEventListener('input', function() {
+        textoMemeSuperior.textContent = superiorTexto.value;
+    });
+
+    const inferiorTexto = document.getElementById('inferior-texto');
+    const textoMemeInferior = document.getElementById('texto-meme-inferior');
+
+    inferiorTexto.addEventListener('input', function() {
+        textoMemeInferior.textContent = inferiorTexto.value;
+    });
+
+
+    // Estilo fuente
+    
+    const fontSelect = document.getElementById('font');
+
+    fontSelect.addEventListener('change', function() {
+        textoMemeSuperior.style.fontFamily = fontSelect.value;
+        textoMemeInferior.style.fontFamily = fontSelect.value;
+    });
+
+    // Tamaño de fuente
+
+    const tamañoFuenteInput = document.getElementById('tamaño-fuente');
+
+    tamañoFuenteInput.addEventListener('input', function() {
+        textoMemeSuperior.style.fontSize = `${tamañoFuenteInput.value}px`;
+        textoMemeInferior.style.fontSize = `${tamañoFuenteInput.value}px`;
+    });
+
+    // Color de Texto
+    const colorTextoInput = document.getElementById('color-texto');
+
+    colorTextoInput.addEventListener('input', function() {
+        textoMemeSuperior.style.color = colorTextoInput.value;
+        textoMemeInferior.style.color = colorTextoInput.value;
+    });
+
+    // fondo de Texto
+
+    const fondoTextoInput = document.getElementById('fondo-texto');
+
+    fondoTextoInput.addEventListener('input', function() {
+        textoMemeSuperior.style.backgroundColor = fondoTextoInput.value;
+        textoMemeInferior.style.backgroundColor = fondoTextoInput.value;
+    });
+
+
+    // Fondo Transparente 
+
+    const checkboxTransparente = document.getElementById('checkbox-transparente');
+    checkboxTransparente.addEventListener('change', function() {
+        const backgroundColor = checkboxTransparente.checked ? 'transparent' : fondoTextoInput.value;
+        textoMemeSuperior.style.backgroundColor = backgroundColor;
+        textoMemeInferior.style.backgroundColor = backgroundColor;
+    });
+
+
+    // Contornos
+
+    const contornoNinguno = document.getElementById('contorno-ninguno');
+
+    contornoNinguno.addEventListener('click', function() {
+        textoMemeSuperior.style.textShadow = 'none';
+        textoMemeInferior.style.textShadow = 'none';
+    });
+
+
+    const contornoClaro = document.getElementById('contorno-claro');
+
+    contornoClaro.addEventListener('click', function() {
+        textoMemeSuperior.style.textShadow = '2px 2px 4px #ffffff';
+        textoMemeInferior.style.textShadow = '2px 2px 4px #ffffff';
+    });
+
+    const contornoOscuro = document.getElementById('contorno-oscuro');
+
+    contornoOscuro.addEventListener('click', function() {
+        textoMemeSuperior.style.textShadow = '2px 2px 4px #000000';
+        textoMemeInferior.style.textShadow = '2px 2px 4px #000000';
+    });
+
+    // Espaciado
+
+    const espaciadoInput = document.getElementById('espaciado');
+
+    espaciadoInput.addEventListener('input', function() {
+            textoMemeSuperior.style.letterSpacing = `${espaciadoInput.value}px`;
+            textoMemeInferior.style.letterSpacing = `${espaciadoInput.value}px`;
+        });
+
+    // Interlineado
+    
+    const interlineadoInput = document.getElementById('interlineado');
+
+    interlineadoInput.addEventListener('input', function() {
+        textoMemeSuperior.style.lineHeight = `${interlineadoInput.value}`;
+        textoMemeInferior.style.lineHeight = `${interlineadoInput.value}`;
+    });
+});
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+
+
+// document.getElementById("boton-imagen").addEventListener("click", function(){
+//     const asideImg = document.getElementById("panel-img");
+//     if (asideImg.style.display === "none") {
+//         asideImg.style.display = "block";
+//     } else {
+//         asideImg.style.display = "none";
+//     }
+// })
+    
+    
+    
+
 
 
 // Fuentes de texto
-const titulo = document.getElementById(`fuente`);
-const input = document.getElementById(`tipo-fuente`);
-const select = document.getElementById(`font`);
+// const titulo = document.getElementById("fuente");
+// const input = document.getElementById("tipo-fuente");
+// const select = document.getElementById("font");
 
-// titulo.innerHTML = `Texto Default`;
+// // titulo.innerHTML = `Texto Default`;
 
-input.addEventListenner(`input`, (e) => {
-})
+// input.addEventListener("input", (e) => {
+// })
 
-select.addEventListenner(`input`, (e) => {
-    // console.log(e.target.value)
-    titulo.style.fontFamily = e.target.value;
+// select.addEventListener("input", (e) => {
+//     // console.log(e.target.value)
+//     titulo.style.fontFamily = e.target.value;
 
-})
-
+// })
 

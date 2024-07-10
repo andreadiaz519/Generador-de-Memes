@@ -1,4 +1,4 @@
-*{
+/**{
     margin: 0;
     padding: 0;
     color: white;
@@ -11,26 +11,37 @@
     
 } */
 
-.dark-mode {
-    --color-1: #424242;
-    --color-2: #90044a;
-    --color-3: #4d4444;
-    --color-4: #0a4001;
-}
-
-.light-mode {
-    --color-1: #d8aaaa;
-    --color-2: #ea7575;
-    --color-3: #8482f3;
-    --color-4: #f86ae5;
-    }
-
-
-
 body {
-    background-color: #90044a;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+}
+body.dark-mode {
+    /* Estilos para modo oscuro */
+    background-color: #333;
+    color: #fff;
 }
 
+body.light-mode {
+    /* Estilos para modo claro */
+    background-color: #fff;
+    color: #333;
+}
+
+body.dark-mode *{
+    /* Estilos para modo oscuro */
+    background-color: #333;
+    color: #fff;
+}
+
+body.light-mode * {
+    /* Estilos para modo claro */
+    background-color: #fff;
+    color: #333;
+}
 
 /*Barra de Menu*/
 
@@ -123,10 +134,10 @@ body {
     text-align: center;
     background-color: black;
     height: 400px;
-    background-image: url(https://media.istockphoto.com/id/1170896292/es/foto/coraz%C3%B3n-de-oto%C3%B1o-naranjos-amarillos-en-el-bosque-con-forma-de-coraz%C3%B3n-tiempo-soleado-buen-d%C3%ADa.jpg?s=612x612&w=0&k=20&c=QYg3354HfYlQ1vO79qpCuuJPfY1P_Q2egloCgNYo4nU=);
+    transition: background-color 0.3s, background-blend-mode 0.3s;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;  
 }
 
 
@@ -141,7 +152,7 @@ body {
     padding-inline: 15px;
 }
 
-/*Menu Imagen*/
+/* Menu Imagen*/ 
 
 .panel-img {
     width: 260PX;
@@ -156,7 +167,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    display: none;
+    /* display: none; */
 }
 
 .hidden {
@@ -171,10 +182,6 @@ body {
     text-align: center;
 }
 
-.url {
-    margin-top: 20px;
-    
-}
 
 .url-imagen {
     background-color: #393e49;
@@ -238,8 +245,8 @@ body {
     overflow: auto;
     position: fixed;
     top: 0;
-    right: 0;
-    display: none;
+    left:0;
+    /* display: none; */
 }
 
 .titulo-texto {
@@ -293,12 +300,13 @@ body {
     margin-top: 5px;
     border-radius: 5px;
     height: 40px;
+    color: #fff;
 }
 
-.justificacion {
-    width: calc(16% - 2.5px);
+.justificacion-1 {
+    width: calc(20% - 2.5px);
     background-color: #393e49;
-    margin-top: 5px;
+    margin-top: 20px;
     border-radius: 5px;
     height: 40px;
     cursor: pointer;
@@ -350,4 +358,9 @@ body {
     border-radius: 5px;
     height: 40px;
 
+}
+
+.panel-img.active,
+.panel-texto.active {
+    display: flex;
 }
