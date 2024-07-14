@@ -10,37 +10,26 @@
 /* :root {
     
 } */
-
+ 
 body {
+    color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
-    color: #fff;
-}
-body.dark-mode {
-    /* Estilos para modo oscuro */
-    background-color: #333;
-    color: #fff;
 }
 
-body.light-mode {
-    /* Estilos para modo claro */
-    background-color: #fff;
-    color: #333;
-}
 
 body.dark-mode *{
     /* Estilos para modo oscuro */
-    background-color: #333;
+    background-color:black;
     color: #fff;
 }
 
-body.light-mode * {
-    /* Estilos para modo claro */
-    background-color: #fff;
-    color: #333;
+html body.light-mode * {
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
 }
 
 /*Barra de Menu*/
@@ -124,7 +113,7 @@ body.light-mode * {
     text-align: center;
     font-weight: 800;
     color: black;
-    padding-top: 50px;
+    
     
 }
 
@@ -137,7 +126,8 @@ body.light-mode * {
     transition: background-color 0.3s, background-blend-mode 0.3s;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
+
 }
 
 
@@ -157,7 +147,7 @@ body.light-mode * {
 .panel-img {
     width: 260PX;
     height: 100%;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: flex-start;
     padding: 10px 15px;
@@ -169,6 +159,8 @@ body.light-mode * {
     right: 0;
     /* display: none; */
 }
+
+
 
 .hidden {
     display: none;
@@ -189,8 +181,11 @@ body.light-mode * {
     border-radius: 5px;
     height: 40px;
     width: 100%;
+    margin-bottom: 30px;
+    color: white;
     
 }
+
 
 .fondo {
     font-size: 15px;
@@ -222,12 +217,16 @@ body.light-mode * {
 }
 
 .boton-filtros {
+    display: flex;
+    justify-content: ;
     background-color: #393e49;
     margin-top: 30px;
     cursor: pointer;
     font-size: 15px;
     border-radius: 5px;
     padding: 10px;
+    margin-bottom: 30px;
+    align-items: center;
 }
 
 /*Menu de Texto*/
@@ -236,7 +235,7 @@ body.light-mode * {
 .panel-texto {
     width: 260PX;
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     padding: 10px 15px;
@@ -245,7 +244,7 @@ body.light-mode * {
     overflow: auto;
     position: fixed;
     top: 0;
-    left:0;
+    right:0;
     /* display: none; */
 }
 
@@ -259,20 +258,25 @@ body.light-mode * {
 .superior {
     margin-top: 20px;
     font-size: 15px;
+    
 }
 
+.checkbox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
 .contenedor-checkbox {
     display: flex;
     align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
 
 }
 .sin-texto { 
     margin-top: 10px;
     text-align: start;
-}
-
-.checkbox {
-    margin-top: 15px;
 }
 
 .titulo-inferior {
@@ -295,21 +299,20 @@ body.light-mode * {
 }
 
 .tamaño-fuente {
-    width: calc(50% - 2.5px);
+    width: calc(80% - 2.5px);
     background-color: #393e49;
     margin-top: 5px;
     border-radius: 5px;
-    height: 40px;
-    color: #fff;
+    height: 30px;
 }
-
-.justificacion-1 {
-    width: calc(20% - 2.5px);
+.boton-justificado {
+    width: calc(16% - 2.5px);
     background-color: #393e49;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 5px;
     height: 40px;
     cursor: pointer;
+
 
 }
 
@@ -334,16 +337,15 @@ body.light-mode * {
 .titulo-contorno {
     margin-top: 20px;
 }
+
 .contorno {
     width: calc(33% - 2.5px);
     background-color: #393e49;
     margin-top: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
     height: 40px;
     cursor: pointer;
-}
-.espaciado {
-    margin-top: 20px;
 }
 
 .interlineado {
@@ -357,6 +359,8 @@ body.light-mode * {
     margin-top: 5px;
     border-radius: 5px;
     height: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 
 }
 
