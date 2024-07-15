@@ -1,5 +1,6 @@
 
 // Boton Descarga
+
 const botonDescarga = document.getElementById("button-descarga");
 const contenedorMeme = document.getElementById("contenedor-principal");
 
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function actualizarFondoColor() {
         imagenMeme.style.backgroundColor = fondoColorInput.value;
     }
+
+    // No se me dio la opcion de Ninguno, aclarar, multiplicar, oscurecer etc.
 
     // Filtros
 
@@ -103,8 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const superiorTexto = document.getElementById('superior-texto');
     const inferiorTexto = document.getElementById('inferior-texto');
-    const sinTextoSuperiorCheckbox = document.getElementById('sin-texto-superior');
-    const sinTextoInferiorCheckbox = document.getElementById('sin-texto-inferior');
+    
     const textoMemeSuperior = document.getElementById('texto-meme-superior');
     const textoMemeInferior = document.getElementById('texto-meme-inferior');
     
@@ -114,6 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     inferiorTexto.addEventListener('input', function() {
         textoMemeInferior.textContent = inferiorTexto.value;
+    });
+
+    const sinTextoSuperiorCheckbox = document.getElementById('sin-texto-superior');
+    const sinTextoInferiorCheckbox = document.getElementById('sin-texto-inferior');
+
+    sinTextoSuperiorCheckbox.addEventListener('change', function() {
+        textoMemeSuperior.style.display = sinTextoSuperiorCheckbox.checked ? 'none' : 'block';
+    });
+
+    sinTextoInferiorCheckbox.addEventListener('change', function() {
+        textoMemeInferior.style.display = sinTextoInferiorCheckbox.checked ? 'none' : 'block';
     });
 
     // Alinear Texto
@@ -189,8 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const contornoClaro = document.getElementById('contorno-claro');
     const contornoOscuro = document.getElementById('contorno-oscuro');
 
-    
-
     contornoNinguno.addEventListener('click', function() {
         textoMemeSuperior.style.textShadow = 'none';
         textoMemeInferior.style.textShadow = 'none';
@@ -226,6 +237,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Justificacion de Texto 
 
+    // No se me dio el justificado
+
     function actualizarAlineacion() {
         if (alinearIzquierda.checked) {
             textoMemeSuperior.style.textAlign = 'left';
@@ -238,21 +251,12 @@ document.addEventListener('DOMContentLoaded', function() {
             textoMemeInferior.style.textAlign = 'right';
         }
     }
-    // Event listeners para los botones de alineación
+    
     alinearIzquierda.addEventListener('click', actualizarAlineacion);
     alinearCentro.addEventListener('click', actualizarAlineacion);
     alinearDerecha.addEventListener('click', actualizarAlineacion);
 
-    // Llamar a la función inicialmente para establecer la alineación inicial
     actualizarAlineacion();
-     // Lógica para manejar los checkboxes de texto superior e inferior
-    sinTextoSuperiorCheckbox.addEventListener('change', function() {
-        textoMemeSuperior.style.display = sinTextoSuperiorCheckbox.checked ? 'none' : 'block';
-    });
-
-    sinTextoInferiorCheckbox.addEventListener('change', function() {
-        textoMemeInferior.style.display = sinTextoInferiorCheckbox.checked ? 'none' : 'block';
-    });
 });
 
 
@@ -275,9 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
-
 
 // Botones de Imagen y Texto 
 

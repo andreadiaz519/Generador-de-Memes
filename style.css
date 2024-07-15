@@ -23,12 +23,12 @@ body {
 
 body.dark-mode *{
     /* Estilos para modo oscuro */
-    background-color:black;
+    background-color:rgb(4, 6, 57);
     color: #fff;
 }
 
 html body.light-mode * {
-    background-color: #fff; /* Fondo blanco */
+    background-color: #868ff4; /* Fondo blanco */
     color: #333; /* Texto oscuro */
 }
 
@@ -98,22 +98,25 @@ html body.light-mode * {
 
 .contenedor-principal {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    height: 100%;
     
 }
 
 .texto-meme {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 40%;
     font-size: 35px;
     padding: 35px 50px;
     background-color: rgb(251, 248, 248);
     text-align: center;
     font-weight: 800;
     color: black;
-    
+    margin: 0;
     
 }
 
@@ -122,12 +125,15 @@ html body.light-mode * {
     justify-content: center;
     text-align: center;
     background-color: black;
-    height: 400px;
-    transition: background-color 0.3s, background-blend-mode 0.3s;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    
+}
 
+.img-gatos {
+    /* max-width: 1200px;
+    min-width: 320px; */
+    width: 605px;
+    height: 605px;   
+    
 }
 
 
@@ -136,10 +142,10 @@ html body.light-mode * {
     align-items: center;
     border-radius: 5px;
     cursor: pointer;
-    height: 35px;
+    height: 40px;
     margin: 20px;
-    background-color: rgb(80, 251, 54);
-    padding-inline: 15px;
+    background-color: rgb(74, 62, 248);
+    padding-inline: 20px;
 }
 
 /* Menu Imagen*/ 
@@ -214,12 +220,14 @@ html body.light-mode * {
 }
 .rango {
     margin-top: 10px;
+    
+    
 }
 
 .boton-filtros {
     display: flex;
     justify-content: ;
-    background-color: #393e49;
+    background-color: rgb(74, 62, 248);
     margin-top: 30px;
     cursor: pointer;
     font-size: 15px;
@@ -367,4 +375,13 @@ html body.light-mode * {
 .panel-img.active,
 .panel-texto.active {
     display: flex;
+}
+
+/* Responsive No se me dio el Responsive */
+
+@media (max-width: 768px) {
+    .img-gatos {
+
+    }
+
 }
